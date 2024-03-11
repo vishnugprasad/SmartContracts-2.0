@@ -9,7 +9,7 @@ contract ContactBook {
         string emailId;
     }
 
-    mapping(string => Contact) private contacts;
+    mapping(string => Contact) private contacts; 
 
     function setContact(string memory _name, string memory _phoneNumber, string memory _emailId) public {
         contacts[_name] = Contact(_name, _phoneNumber, _emailId);
