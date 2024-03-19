@@ -31,6 +31,8 @@ contract MyBook {
 
     function buyBook(uint256 amt) public payable {
         require(amt >= myBook.price,"Insufficent balance");
+        payable(owner).transfer(myBook.price);
+        myBook.sold= true;
         owner = msg.sender;
         buyers.push(owner);
         uint256 balance = amt - myBook.price;
