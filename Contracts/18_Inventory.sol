@@ -15,8 +15,7 @@ contract Solution {
         owner = msg.sender;
     }
 
-    function addItemToInventory(
-        string memory _name,uint256 _price) public onlyOwner {
+    function addItemToInventory(string memory _name,uint256 _price) public onlyOwner {
         Item memory newItem = Item({name: _name, price: _price});
       inventory.push(newItem);
         
